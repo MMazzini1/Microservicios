@@ -1,0 +1,25 @@
+Projecto microservicios / kafka / docker / mongo db / git / actuator / logstash, kibana  / 
+
+
+- Crear Eureka Discovery Service:
+Dependencias, Eureka Discovery y Eureka Service.
+Setearle las propiedades
+Levantar y verificar Dashboard
+Commitear a Github
+
+
+- Crear un Microservicio de test el cual sea descubierto por Eureka Discovery Service.
+Dependencias: Eureka Discovery, no service. 
+
+
+
+-Configurar Zuul Api Gateway y testearlo.
+
+
+
+-Crear otro Microservicio y probar comunicacion.
+Configurar Feign Client
+Configurar Hystrix Circuit Breaker
+
+
+-Configurar el Config Server. 
