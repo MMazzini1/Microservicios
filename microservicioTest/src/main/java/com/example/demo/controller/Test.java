@@ -23,7 +23,7 @@ public class Test {
 		System.out.println("test");
 		String testBresponse = testBclient.test();
 		return "This microservice listening on port: " + environment.getProperty("local.server.port") +
-				"\n  Microservice B listening on port: " + testBresponse;
+				"<br>  Microservice B: " + testBresponse;
 	}
 
 
