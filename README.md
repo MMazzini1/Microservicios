@@ -12,4 +12,5 @@ zuulApiGateway: Zuul funciona como el punto de entrada de la aplicación, realiz
 balancing.
 
 microservicios: microservicioA y microservicioB, se trata de dos microservicios con una API REST "/test/status" que imprime el puerto en el cual se encuentra escuchando el microservicio y adicionalmente, el puerto del microservicio complementario.
+
 La comunicación entre microservicios puede realizarse de forma sincrónica o asincrónica. En este caso se trata de una comunicación sincrónica utilizando Feign, un cliente HTTP declarativo. Además, los microservicios deben proporcionar alguna forma de reaccionar ante la eventual falta de disponibilidad del microservicio con el cúal se comunican. En este caso, se puede utilizar Hystrix Circuit Breaker, una librería que facilita la implementación del patrón Circuit Breaker (https://martinfowler.com/bliki/CircuitBreaker.html). En el llamado al microservicio complementario, la aplicación implementa un método de fallback si este no se encuentra disponible. 
