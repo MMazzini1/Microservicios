@@ -4,7 +4,7 @@ Proof of concept - aplicación Java con arquitectura de microservicios con Sprin
 Este repositorio contiene 5 aplicaciones distintas con configuración mínima para demostrar una arquitectura de microservicios básica.
 Los componentes son:
 
-eurekaDiscoveryService: Eureka Server o también llamado Discovery Service, una aplicación que contiene la información sobre todos los microservicios, lo cúal permite que estos se puedan localizar fácilmente entre ellos. Los microservicios se registran en el servidor de Eureka y Eureka conoce la IP y puerto en que se encuentran corriendo todos los servicios. Esto evita tener que hard codear hostname y puertos.
+eurekaDiscoveryService: Eureka Server o también llamado Discovery Service, una aplicación que contiene la información sobre todos los microservicios, lo cúal permite que estos se puedan localizar fácilmente entre ellos. Los microservicios se registran en el servidor de Eureka, por lo que Eureka conoce la IP y puerto en que se encuentran corriendo todas las instancias. Esto evita tener que hard codear hostname y puertos.
 
 configServer: es un Spring Cloud Config Server que permite tener una configuración centralizada de la cual pueden leer todos los microservicios. El server se encuentra configurado para tomar datos de un application.properties de un repositorio de git privado. Los microservicios pueden leer propiedades directamente del server. Las propiedades definidias en el server tienen mayor prioridad que las que se definen en los application.properties de los microservicios. 
 
