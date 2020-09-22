@@ -1,8 +1,8 @@
 # microservicios
 Proof of concept - aplicación Java con arquitectura de microservicios con Spring Boot y Spring Cloud.
 
-Este repositorio contiene 5 aplicaciones distintas con configuración mínima para mostrar una arquitectura de microservicios mínima.
-Las aplicaciones son:
+Este repositorio contiene 5 aplicaciones distintas con configuración mínima para demostrar una arquitectura de microservicios básica.
+Los componentes son:
 
 eurekaDiscoveryService: Eureka Server o también llamado Discovery Service, una aplicación que contiene la información sobre todos los microservicios, lo cúal permite que estos se puedan localizar fácilmente entre ellos. Los microservicios se registran en el servidor de Eureka y Eureka conoce la IP y puerto en que se encuentran corriendo todos los servicios. Esto evita tener que hard codear hostname y puertos.
 
