@@ -1,2 +1,15 @@
 # microservicios
-Proof of concept - aplicación Java con arquitectura de microservicios.
+Proof of concept - aplicación Java con arquitectura de microservicios con Spring Boot y Spring Cloud.
+
+Este repositorio contiene 5 aplicaciones distintas con configuración mínima para mostrar una arquitectura de microservicios mínima.
+Las aplicaciones son:
+
+eurekaDiscoveryService: Eureka Server o también llamado Discovery Service, una aplicación que contiene la información sobre todos los microservicios, lo cúal permite que estos se puedan localizar fácilmente entre ellos. Los microservicios se registran en el servidor de Eureka y Eureka conoce la IP y puerto en que se encuentran corriendo todos los servicios. Esto evita tener que hard codear hostname y puertos.
+
+configServer: es un Spring Cloud Config Server que permite tener una configuración centralizada de la cual pueden leer todos los microservicios. El server se encuentra configurado para tomar datos de un application.properties de un repositorio de git privado. Los microservicios pueden leer propiedades directamente del server. Las propiedades definidias en el server tienen mayor prioridad que las que se definen en los application.properties de los microservicios. 
+
+zuulApiGateway: Zuul funciona como el punto de entrada de la aplicación, realizando el ruteo dinámico a los distintos microservicios. Zuul se integra con Ribbon y proporciona load 
+balancing.
+
+microservicios: microservicioA y microservicioB, se trata de dos microservicios con una API REST "/test/status" que imprime el puerto en el cual se encuentra escuchando el microservicio y adicionalmente, el puerto del microservicio complementario.
+La comunicación entre microservicios puede realizarse de forma sincrónica o asincrónica. En este caso se trata de una comunicación sincrónica utilizando Feign, un cliente HTTP declarativo. Además, los microservicios deben proporcionar alguna forma de reaccionar ante la eventual falta de disponibilidad del microservicio con el cúal se comunican. En este caso, se puede utilizar Hystrix Circuit Breaker, una librería que facilita la implementación del patrón Circuit Breaker (https://martinfowler.com/bliki/CircuitBreaker.html). En el llamado al microservicio complementario, la aplicación implementa un método de fallback si este no se encuentra disponible. 
